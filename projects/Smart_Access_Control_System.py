@@ -17,7 +17,7 @@ is_banned   = bool(input("Are you banned?True or False: "))       # True or Fals
 
 if is_employee  and has_badge:
     print("Access granted to employee")
-elif is_guest and is_approved_guest not is_banned:
+elif is_guest and is_approved_guest:
     print("Access granted to guest")
 else:
     print("Access denied")
