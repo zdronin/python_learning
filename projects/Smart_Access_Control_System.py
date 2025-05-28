@@ -9,22 +9,21 @@ If they are a guest, they must be on the approved guest list and must not be ban
 
 Anyone else is denied access.
 """
-is_employee = input("Are you an employee?True or False: ").lower() == "true"        # True or False
-has_badge   = input("Do you have a badge?True or False: ").lower() == "true"       # True or False
-is_guest    = input("Are you a guest?True or False: ").lower() == "true"      # True or False
-is_approved_guest = input("Are you an approved guest?True or False: ").lower() == "true"  # True or False
-is_banned   = input("Are you banned?True or False: ").lower() == "true"       # True or False
+def to_bool(value):
+    """Converts user input into a proper boolean."""
+    return value.strip().lower() in ["true", "t", "yes", "y"]
 
-if is_employee  and has_badge:
-    print("Access granted to employee")
+# Prompt for inputs
+is_employee = to_bool(input("Are you an employee? (True/False): "))
+has_badge = to_bool(input("Do you have a badge? (True/False): "))
+is_guest = to_bool(input("Are you a guest? (True/False): "))
+is_approved_guest = to_bool(input("Are you an approved guest? (True/False): "))
+is_banned = to_bool(input("Are you banned? (True/False): "))
+
+# Access logic
+if is_employee and has_badge:
+    print("Access granted to employee.")
 elif is_guest and is_approved_guest and not is_banned:
-    print("Access granted to guest")
+    print("Access granted to guest.")
 else:
-    print("Access denied")
-
-
-
-
-
-
-
+    print("Access denied.")
