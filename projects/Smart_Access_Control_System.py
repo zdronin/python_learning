@@ -9,11 +9,11 @@ If they are a guest, they must be on the approved guest list and must not be ban
 
 Anyone else is denied access.
 """
-is_employee = bool(input("Are you an employee?True or False: "))        # True or False
-has_badge   = bool(input("Do you have a badge?True or False: "))       # True or False
-is_guest    = bool(input("Are you a guest?True or False: "))      # True or False
-is_approved_guest = bool(input("Are you an approved guest?True or False: "))  # True or False
-is_banned   = bool(input("Are you banned?True or False: "))       # True or False
+is_employee = input("Are you an employee?True or False: ").lower() == "true"        # True or False
+has_badge   = input("Do you have a badge?True or False: ").lower() == "true"       # True or False
+is_guest    = input("Are you a guest?True or False: ").lower() == "true"      # True or False
+is_approved_guest = input("Are you an approved guest?True or False: ").lower() == "true"  # True or False
+is_banned   = input("Are you banned?True or False: ").lower() == "true"       # True or False
 
 if is_employee  and has_badge:
     print("Access granted to employee")
